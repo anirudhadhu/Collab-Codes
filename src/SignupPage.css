@@ -1,0 +1,39 @@
+.signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .signup-form label {
+    margin-bottom: 10px;
+  }
+  
+  .signup-form input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-bottom: 20px;
+  }
+  
+  .signup-form button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signup-form button:hover {
+    background-color: darkblue;
+  }
+  
