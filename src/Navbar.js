@@ -1,13 +1,13 @@
 import React from 'react';
-import LoginPage from './LoginPage';
 import SignupPage from './SignupPage';
 import ReactDOM from 'react-dom';
+import LoginForm from './LoginPage';
 
 const Navbar = () => {
   const handleLoginClick = () => {
-    const loginWindow = window.open('', '_blank');
+    const loginWindow = window.open('', '_blank');           
     loginWindow.document.write('<html><head><title>Login</title></head><body></body></html>');
-    ReactDOM.render(<LoginPage />, loginWindow.document.body);
+    ReactDOM.render(<LoginForm />, loginWindow.document.body);
   };
 
   const handleSignupClick = () => {
@@ -26,6 +26,7 @@ const Navbar = () => {
           <li><a href="/">Home</a></li>
           <li><a href="/about">About Us</a></li>
           <li><a href="/instructions">Instructions</a></li>
+          
           <li><button onClick={handleLoginClick}>Login</button></li>
           <li><button onClick={handleSignupClick}>Signup</button></li>
         </ul>

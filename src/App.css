@@ -1,14 +1,19 @@
+
+   
+
+
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: rgb(252, 248, 248);
   padding: 1rem;
-  box-shadow: 0 2px 4px rgba(16, 16, 16);
+  box-shadow: 0 2px 4px rgb(129, 128, 128);
 
 }
 
-.navbar__logo {
+.navbar__left {
   width: 5rem;
   height: auto;
 }
