@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+// News API
 function NewsApp() {
   const [articles, setArticles] = useState([]);
 
