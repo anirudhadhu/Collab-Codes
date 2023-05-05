@@ -54,6 +54,14 @@ const LoginForm = () => {
             <button className="submit" type="submit" onClick={handleSubmit}   style={{ display: 'block', margin: '0 auto', border: 'black', backgroundColor: 'none', color: 'black', textAlign: 'center', fontSize: '17px', padding: '16px', width: '130px', borderRadius: '4px', cursor: 'pointer' }}>
               Login
             </button>
+            <br>
+            </br>
+
+            <div class="signup ">
+             Don't Have an account? 
+             <button2 className="submit" type="submit" onClick={handleSubmit}  style={{ position:'center', display: 'block', margin: '0 auto', border: 'black', backgroundColor: 'black', color: 'white', textAlign: 'center', fontSize: '15px', padding: '10px', width: '50px', borderRadius: '4px', cursor: 'pointer' }}>
+              Sign Up</button2>
+            </div>
           </form>
         </div>
       </div>
