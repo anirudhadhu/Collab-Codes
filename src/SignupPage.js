@@ -27,7 +27,12 @@ const SignupPage = () => {
   };
 
   return (
+    <div className='app'>
+      <img src={require("./images/1logo.png")} alt='' />
+
+    
     <div> 
+  
       <h2>Tax Calculation system</h2>
     
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
@@ -78,6 +83,7 @@ const SignupPage = () => {
               Signup
             </button>
               </form>
+              </div>
               </div>
               </div>
               </div>
