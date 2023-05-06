@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+import Homepage from './homepage';
 
 const Vehicletax = () => {
 const [vehicleType, setVehicleType] = useState('bike');
@@ -12,6 +14,10 @@ setVehicleType(event.target.value);
 
 const handleCcTypeChange = (event) => {
 setCcType(event.target.value);
+};
+
+const handleHomeClick = () => {
+  ReactDOM.render(<Homepage />, document.body);
 };
 
 const calculateVehicleTax = () => {
@@ -63,57 +69,7 @@ setVehicleTax(tax);
 
 return (
 
-
-
-
-
-
-
-
-
-
-
-
-    <><div>
-         <nav className="navbar" style={{display:'flex',justifyContent:'space-between', alignItems:'center', backgroundColor:'white',padding:'10px',boxShadow:'0 2px 4px rgb(129, 128, 128)'}}
->
-
-      <div className="navbar__left">
-        <img src={require('./images/1logo.png')} alt="Logo" style={{ width: "100px", height: "50px" }} />
-      </div>
-
-
-
-      <div className="navbar__right">
-        <ul className="navbar__links"
-        
-        style={{display:'flex', listStyle:'none', margin:'0', padding:0, marginLeft:'2rem', color:'black', fontWeight:'bold', }}>
-
-
-          <li style={{marginRight:'10px'}}><a href="/">Home</a></li>
-
-
-          <li style={{marginRight:'10px'}}><a href="/about">About Us</a></li>
-
-
-          <li style={{marginRight:'10px'}}><a href="/instructions">Instructions</a></li>
-          
-          
-        </ul>
-      </div>
-    </nav>
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        </div><div style={{
+        <div style={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -176,10 +132,15 @@ return (
             fontWeight: 'bold'
         }}>
             Vehicle Tax: {vehicleTax}
+            
         </div>
-    </div></>
-
+        <div style={{marginTop: '30px',
+      
+        
+        }}><button onClick={handleHomeClick}>Back</button> </div>
+        </div>
+ 
 );
-};
+      }
 
 export default Vehicletax;

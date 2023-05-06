@@ -1,5 +1,5 @@
 import './App.css';
-import Navbar from './Navbar';
+import LoginForm from './Login';
 import Homepage from './homepage';
 
 function App() {
@@ -8,8 +8,10 @@ function App() {
 
       
       
-      <Navbar />
-      <Homepage></Homepage>
+      
+      <LoginForm>
+        <Homepage></Homepage>
+      </LoginForm>
     </>
   );
 }

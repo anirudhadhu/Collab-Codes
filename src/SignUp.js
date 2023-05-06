@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+
+import LoginForm from './Login';
 
 const SignupPage = () => {
   const [Username, setUsername] = useState('');
@@ -23,15 +26,16 @@ const SignupPage = () => {
     console.log(`Submitting signup form with Username: ${Username}, email: ${email}, password: ${password}`);
   };
 
+  const handleLoginClick = () => {
+    ReactDOM.render(<LoginForm />, document.body);
+  };
   return (
     <div>
-      <img src={require("./images/logo.jpg.png")} alt='' />
-      <div style={{position: 'center', width: '100px', height: '100px', left: '100px', top: '0px'}}>
-          </div>
+      
     <div> 
   
       <h2>Tax Calculation system</h2>
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '80vh', }}>
       <h3> Sign Up</h3>
       <h4> Hello there! Signin and start calculating your taxes</h4>
       <div style={{ border: '5px solid black', borderRadius: 10, padding: '30px 50px', marginBottom: '20px' }}>
@@ -82,7 +86,7 @@ const SignupPage = () => {
             </br>
             <div class="Login ">
              Already Have an account? 
-             <button2 className="submit" type="submit" onClick={handleSubmit}  style={{ display: 'block', margin: '0 auto', border: 'black', backgroundColor: 'black', color: 'white', textAlign: 'center', fontSize: '15px', padding: '10px', width: '50px', borderRadius: '4px', cursor: 'pointer' }}>
+             <button2 className="submit" type="submit" onClick={handleLoginClick}  style={{ display: 'block', margin: '0 auto', border: 'black', backgroundColor: 'black', color: 'white', textAlign: 'center', fontSize: '15px', padding: '10px', width: '50px', borderRadius: '4px', cursor: 'pointer' }}>
               
               Login</button2>
             </div>

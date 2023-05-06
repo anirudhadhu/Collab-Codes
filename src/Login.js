@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import Homepage from './homepage';
+import ReactDOM from 'react-dom';
+import SignupPage from './SignUp';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -15,6 +18,14 @@ const LoginForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(`Submitting login form with email: ${username} and password: ${password}`);
+  };
+
+  const handleHomeClick = () => {
+    ReactDOM.render(<Homepage />, document.body);
+  };
+
+  const handleSignUpClick = () => {
+    ReactDOM.render(<SignupPage />, document.body);
   };
 
 
@@ -51,7 +62,7 @@ const LoginForm = () => {
                 onChange={handlePasswordChange}
               />
             </div>
-            <button className="submit" type="submit" onClick={handleSubmit}   style={{ display: 'block', margin: '0 auto', border: 'black', backgroundColor: 'none', color: 'black', textAlign: 'center', fontSize: '17px', padding: '16px', width: '130px', borderRadius: '4px', cursor: 'pointer' }}>
+            <button className="submit" type="submit" onClick={handleHomeClick}   style={{ display: 'block', margin: '0 auto', border: 'black', backgroundColor: 'none', color: 'black', textAlign: 'center', fontSize: '17px', padding: '16px', width: '130px', borderRadius: '4px', cursor: 'pointer' }}>
               Login
             </button>
             <br>
@@ -59,7 +70,7 @@ const LoginForm = () => {
 
             <div class="signup ">
              Don't Have an account? 
-             <button2 className="submit" type="submit" onClick={handleSubmit}  style={{ position:'center', display: 'block', margin: '0 auto', border: 'black', backgroundColor: 'black', color: 'white', textAlign: 'center', fontSize: '15px', padding: '10px', width: '50px', borderRadius: '4px', cursor: 'pointer' }}>
+             <button2 className="submit" type="submit" onClick={handleSignUpClick}  style={{ position:'center', display: 'block', margin: '0 auto', border: 'black', backgroundColor: 'black', color: 'white', textAlign: 'center', fontSize: '15px', padding: '10px', width: '50px', borderRadius: '4px', cursor: 'pointer' }}>
               Sign Up</button2>
             </div>
           </form>

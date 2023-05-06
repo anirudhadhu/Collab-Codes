@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+import Homepage from './homepage';
 
 const VatTaxCalculator = () => {
   const [price, setPrice] = useState(0);
@@ -10,6 +12,9 @@ const VatTaxCalculator = () => {
 
   const handleVatRateChange = (event) => {
     setVatRate(event.target.value);
+  };
+  const handleHomeClick = () => {
+    ReactDOM.render(<Homepage />, document.body);
   };
 
   const calculateVatTax = () => {
@@ -49,6 +54,10 @@ const VatTaxCalculator = () => {
             VAT Tax: NPR {calculateVatTax()} 
           </div>
         )}
+        <div style={{marginTop: '30px',
+      
+        
+    }}><button onClick={handleHomeClick}>Back</button> </div>
       </div>
     </div>
   );

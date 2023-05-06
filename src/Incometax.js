@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+import Homepage from './homepage';
 
 const Incometax = () => {
 
@@ -6,7 +8,6 @@ const Incometax = () => {
   const [fiscalYear, setFiscalYear] = useState('2079/2080');
   const [monthlySalary, setMonthlySalary] = useState(0);
   const [numMonths, setNumMonths] = useState(12);
-  const [bonus, setBonus] = useState(0);
   const [annualDeduction, setAnnualDeduction] = useState({
     employeeType: 'married', // or 'unmarried'
     socialSecurityFund: 0,
@@ -35,10 +36,6 @@ const Incometax = () => {
     setNumMonths(event.target.value);
   };
 
-  const handleBonusChange = (event) => {
-    setBonus(event.target.value);
-  };
-
   const handleSocialSecurityFundChange = (event) => {
     setAnnualDeduction({
       ...annualDeduction,
@@ -53,6 +50,10 @@ const Incometax = () => {
     });
   };
 
+  const handleHomeClick = () => {
+    ReactDOM.render(<Homepage />, document.body);
+  };
+
   const handleInsuranceChange = (event) => {
     setAnnualDeduction({
       ...annualDeduction,
@@ -63,10 +64,10 @@ const Incometax = () => {
   const calculateTax = () => {
     let taxableIncome;
     if (employeeType === 'unmarried') {
-      taxableIncome = monthlySalary *numMonths +bonus - annualDeduction.socialSecurityFund - annualDeduction.employeesProvidentFund - annualDeduction.citizenInvestmentTrust - annualDeduction.insurance;
+      taxableIncome = monthlySalary *numMonths  - annualDeduction.socialSecurityFund - annualDeduction.employeesProvidentFund - annualDeduction.citizenInvestmentTrust - annualDeduction.insurance;
      
     } else if (employeeType === 'married') {
-      taxableIncome = ( bonus + monthlySalary * numMonths) - annualDeduction.socialSecurityFund - annualDeduction.employeesProvidentFund - annualDeduction.citizenInvestmentTrust - annualDeduction.insurance - annualDeduction.spouseDeduction;
+      taxableIncome = (monthlySalary * numMonths)  - annualDeduction.socialSecurityFund - annualDeduction.employeesProvidentFund - annualDeduction.citizenInvestmentTrust - annualDeduction.insurance - annualDeduction.spouseDeduction;
     }
     // Tax calculation formula
     let taxAmount = 0;
@@ -106,33 +107,6 @@ const Incometax = () => {
   return (   
     
  
-<div>   <nav className="navbar" style={{display:'flex',justifyContent:'space-between', alignItems:'center', backgroundColor:'white',padding:'10px',boxShadow:'0 2px 4px rgb(129, 128, 128)'}}
->
-
-      <div className="navbar__left">
-        <img src={require('./images/1logo.png')} alt="Logo" style={{ width: "100px", height: "50px" }} />
-      </div>
-
-
-
-      <div className="navbar__right">
-        <ul className="navbar__links"
-        
-        style={{display:'flex', listStyle:'none', margin:'0', padding:0, marginLeft:'2rem', color:'black', fontWeight:'bold', }}>
-
-
-          <li style={{marginRight:'10px'}}><a href="/">Home</a></li>
-
-
-          <li style={{marginRight:'10px'}}><a href="/about">About Us</a></li>
-
-
-          <li style={{marginRight:'10px'}}><a href="/instructions">Instructions</a></li>
-          
-          
-        </ul>
-      </div>
-    </nav>
 
 
 
@@ -165,8 +139,6 @@ const Incometax = () => {
     <label htmlFor="num-months" style={{ width: '150px' }}>Number of Months Worked:</label>
     <input type="number" id="num-months" value={numMonths} onChange={handleNumMonthsChange} style={{ width: '200px',marginBottom:'10px',border: '1px solid black', padding: 7, borderRadius: 10, backgroundColor: 'white', fontSize: 'small', fontWeight: 'bold', textAlign: 'center', color: 'black' }} />
 
-    <label htmlFor="bonus" style={{ width: '150px' }}>Bonus:</label>
-    <input type="number" id="bonus" value={bonus} onChange={handleBonusChange} style={{ width: '200px',marginBottom:'10px',border: '1px solid black', padding: 7, borderRadius: 10, backgroundColor: 'white', fontSize: 'small', fontWeight: 'bold', textAlign: 'center', color: 'black' }} />
 
     </div>
 
@@ -217,16 +189,27 @@ const Incometax = () => {
     
   </div>
   </div>
+  <div style={{marginTop: '30px',
+      
+        
+    }}><button onClick={handleHomeClick}>Back</button> </div>
 </div>
 
 </div>
 
-</div>
+
 
 );
 }
 
 export default Incometax;
+
+
+
+
+
+
+
 
 
 
