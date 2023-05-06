@@ -1,30 +1,29 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import Homepage from './homepage';
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import Homepage from "./homepage";
 
 const Vehicletax = () => {
-const [vehicleType, setVehicleType] = useState('bike');
-const [ccType, setCcType] = useState('100');
+  const [vehicleType, setVehicleType] = useState("bike");
+  const [ccType, setCcType] = useState("100");
 
-const [vehicleTax, setVehicleTax] = useState(0);
+  const [vehicleTax, setVehicleTax] = useState(0);
 
-const handleVehicleTypeChange = (event) => {
-setVehicleType(event.target.value);
-};
+  const handleVehicleTypeChange = (event) => {
+    setVehicleType(event.target.value);
+  };
 
-const handleCcTypeChange = (event) => {
-setCcType(event.target.value);
-};
+  const handleCcTypeChange = (event) => {
+    setCcType(event.target.value);
+  };
 
-const handleHomeClick = () => {
-  ReactDOM.render(<Homepage />, document.body);
-};
+  const handleHomeClick = () => {
+    ReactDOM.render(<Homepage />, document.body);
+  };
 
-const calculateVehicleTax = () => {
-
+  const calculateVehicleTax = () => {
     let tax = 0;
 
-    if (vehicleType === 'bike') {
+    if (vehicleType === "bike") {
       if (ccType <= 125) {
         tax = 2800;
       } else if (ccType <= 160) {
@@ -38,7 +37,7 @@ const calculateVehicleTax = () => {
       } else {
         tax = 30000;
       }
-    } else if (vehicleType === 'car') {
+    } else if (vehicleType === "car") {
       if (ccType <= 1000) {
         tax = 21000;
       } else if (ccType <= 1500) {
@@ -50,97 +49,91 @@ const calculateVehicleTax = () => {
       } else if (ccType <= 2900) {
         tax = 41000;
       } else {
-        tax = 41000 + (Math.floor((ccType - 2900) / 100) * 2500);
+        tax = 41000 + Math.floor((ccType - 2900) / 100) * 2500;
       }
     }
 
+    // ...
+    setVehicleTax(tax);
+  };
 
-
-
-
-
-
-
-
-
-// ...
-setVehicleTax(tax);
-};
-
-return (
-
-        <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '50vh',
-        width: '150vh',
-        border: '0px solid blue',
-        borderRadius: '10px',
-        padding: '10px',
-        backgroundColor: 'lightblue',
-        transform: 'translateY(2cm)',
-        margin: 'auto',
-    }}>
-        <h1 style={{
-            fontSize: '2rem',
-            fontWeight: 'bold',
-            marginBottom: '30px',
-            color: 'blue'
-        }}>
-            Vehicle Tax Calculator
-        </h1>
-        <div style={{ marginBottom: '20px' }}>
-            <label style={{ marginRight: '10px', fontWeight: 'bold' }}>
-                Vehicle Type:
-            </label>
-            <select
-                value={vehicleType}
-                onChange={handleVehicleTypeChange}
-                style={{ padding: '5px', borderRadius: '5px' }}
-            >
-                <option value="bike">Bike</option>
-                <option value="car">Car</option>
-            </select>
-        </div>
-        <div style={{ marginBottom: '20px' }}>
-            <label style={{ marginRight: '10px', fontWeight: 'bold' }}>
-                CC Type:
-            </label>
-            <input
-                type="text"
-                value={ccType}
-                onChange={handleCcTypeChange}
-                style={{ padding: '5px', borderRadius: '5px' }} />
-        </div>
-        <button
-            onClick={calculateVehicleTax}
-            style={{
-                padding: '10px',
-                background: 'blue',
-                color: 'white',
-                border: 'none',
-                borderRadius: '5px',
-                cursor: 'pointer'
-            }}
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "60vh",
+        width: "100vh",
+        border: "0px solid blue",
+        borderRadius: "10px",
+        padding: "10px",
+        backgroundColor: "lightblue",
+        transform: "translateY(2cm)",
+        margin: "auto",
+      }}
+    >
+      <h1
+        style={{
+          fontSize: "2rem",
+          fontWeight: "bold",
+          marginBottom: "30px",
+          color: "black",
+        }}
+      >
+        Vehicle Tax Calculator
+      </h1>
+      <div style={{ marginBottom: "20px" }}>
+        <label style={{ marginRight: "10px", fontWeight: "bold" }}>
+          Vehicle Type:
+        </label>
+        <select
+          value={vehicleType}
+          onChange={handleVehicleTypeChange}
+          style={{ padding: "5px", borderRadius: "5px" }}
         >
-            Calculate Tax
-        </button>
-        <div style={{
-            marginTop: '20px',
-            fontWeight: 'bold'
-        }}>
-            Vehicle Tax: {vehicleTax}
-            
-        </div>
-        <div style={{marginTop: '30px',
-      
-        
-        }}><button onClick={handleHomeClick}>Back</button> </div>
-        </div>
- 
-);
-      }
+          <option value="bike">Bike</option>
+          <option value="car">Car</option>
+        </select>
+      </div>
+      <div style={{ marginBottom: "20px" }}>
+        <label style={{ marginRight: "10px", fontWeight: "bold" }}>
+          CC Type:
+        </label>
+        <input
+          type="text"
+          value={ccType}
+          onChange={handleCcTypeChange}
+          style={{ padding: "5px", borderRadius: "5px" }}
+        />
+      </div>
+      <button
+        onClick={calculateVehicleTax}
+        style={{
+          padding: "15px",
+          background: "#3d405b",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        Calculate Tax
+      </button>
+      <div
+        style={{
+          marginTop: "20px",
+          fontWeight: "bold",
+        }}
+      >
+        Vehicle Tax: {vehicleTax}
+      </div>
+      <div style={{ marginTop: "30px" }}>
+        <button onClick={handleHomeClick}>Back</button>{" "}
+      </div>
+    </div>
+  );
+};
 
 export default Vehicletax;

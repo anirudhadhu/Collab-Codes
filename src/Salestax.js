@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-import ReactDOM from 'react-dom';
-import Homepage from './homepage';
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import Homepage from "./homepage";
 
 const Salestax = () => {
-
   const [price, setPrice] = useState();
   const [taxRate, setTaxRate] = useState();
   const [tax, setTax] = useState();
@@ -18,35 +17,79 @@ const Salestax = () => {
   };
 
   return (
-    
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '60vh',
-      width:'1060px',
-      padding: '10px',
-      backgroundColor: 'lightblue',
-    }}>
+    <div 
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "60vh",
+        width: "100vh",
+        border: "0px solid blue",
+        borderRadius: "10px",
+        padding: "10px",
+        backgroundColor: "lightblue",
+        transform: "translateY(2cm)",
+        margin: "auto",
+      }}
+    >
+      <h1
+        style={{
+          fontSize: "2rem",
+          fontWeight: "bold",
+          marginBottom: "30px",
+          color: "black",
+        }}
+      >
+        Sales Tax Calculator
+      </h1>
 
-      <label>
+<div style={{ marginBottom: "20px" }}>
+      <label style={{ marginRight: "10px", fontWeight: "bold" }}>
         Price:
-        <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} />
+        <input
+          type="number"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+          style={{ padding: "5px", borderRadius: "5px" }}
+        />
       </label>
-      <label>
+      </div>
+
+      <div style={{ marginBottom: "20px" }}>
+      <label style={{ marginRight: "10px", fontWeight: "bold" }}>
         Tax Rate:
-        <input type="number" value={taxRate} onChange={(e) => setTaxRate(e.target.value)} />
+        <input
+          type="number"
+          value={taxRate}
+          onChange={(e) => setTaxRate(e.target.value)}
+          style={{ padding: "5px", borderRadius: "5px" }}
+        />
       </label>
-      <button onClick={calculateTax}>Calculate Tax</button>
+      </div>
+
+
+      <button
+        onClick={calculateTax}
+        style={{
+          padding: "15px",
+          background: "#3d405b",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        Calculate Tax
+      </button>
+
       <p>Tax: {tax}</p>
 
-      <div style={{marginTop: '30px',
-      
-        
-    }}><button onClick={handleHomeClick}>Back</button> </div>
+      <div style={{ marginTop: "10px" }}>
+        <button onClick={handleHomeClick}>Back</button>{" "}
+      </div>
     </div>
   );
-}
+};
 
 export default Salestax;
