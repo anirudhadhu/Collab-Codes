@@ -1,0 +1,311 @@
+.Income {
+    width: 200px;
+    height: 50px;
+    right: 10%;
+    margin-bottom: 80%;
+    border-radius: 20px;
+    background: lightblue;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #000000;
+    transition: 0.5s ease-out;
+    overflow: visible;
+
+}
+
+.Income-details {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+}
+
+.Income-button {
+    transform: translate(-50%, 125%);
+    width: 300%;
+    text-align: justify;
+    border-radius: 1rem;
+    border: none;
+    background-color: none;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 300%;
+    bottom: 1;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+.Income-body {
+    color: rgb(255, 255, 255);
+}
+
+/*Text*/
+.text-title {
+    font-size: 1em;
+    font-weight: lighter;
+}
+
+/*Hover*/
+.Income:hover {
+    border-color: #9f9696;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.Income:hover .Income-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+}
+
+/* for vechile */
+
+.Vehicle {
+    width: 200px;
+    height: 50px;
+    left: -5%;
+    margin-bottom: 80%;
+    border-radius: 20px;
+    background: lightblue;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #000000;
+    transition: 0.5s ease-out;
+    overflow: visible;
+}
+
+.Vehicle-details {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+}
+
+.Vehicle-button {
+    transform: translate(-50%, 125%);
+    width: 300%;
+    text-align: justify;
+    border-radius: 1rem;
+    border: none;
+    background-color: none;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    margin-top: 5%;
+    left: 180%;
+    bottom: 1;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+.Vehicle-body {
+    color: rgb(255, 255, 255);
+}
+
+/*Text*/
+.text-title {
+    font-size: 1em;
+    font-weight: lighter;
+}
+
+/*Hover*/
+.Vehicle:hover {
+    border-color: #9f9696;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.Vehicle:hover .Vehicle-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+}
+
+/* vat */
+.VAT {
+    width: 200px;
+    height: 50px;
+    left: 0%;
+    margin-bottom: 80%;
+    border-radius: 20px;
+    background: lightblue;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #000000;
+    transition: 0.5s ease-out;
+    overflow: visible;
+}
+
+.VAT-details {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+}
+
+.VAT-button {
+    transform: translate(-50%, 125%);
+    width: 300%;
+    text-align: justify;
+    border-radius: 1rem;
+    border: none;
+    background-color: none;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 70%;
+    margin-top: 30%;
+    bottom: 1;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+.VAT-body {
+    color: rgb(255, 255, 255);
+}
+
+/*Text*/
+.text-title {
+    font-size: 1em;
+    font-weight: lighter;
+}
+
+/*Hover*/
+.VAT:hover {
+    border-color: #9f9696;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.VAT:hover .VAT-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+}
+
+/* for sales */
+
+.sales {
+    width: 200px;
+    height: 50px;
+    left: 5%;
+    margin-bottom: 80%;
+    border-radius: 20px;
+    background: lightblue;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #000000;
+    transition: 0.5s ease-out;
+    overflow: visible;
+}
+
+.sales-details {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+}
+
+.sales-button {
+    transform: translate(-50%, 125%);
+    width: 300%;
+    text-align: justify;
+    border-radius: 1rem;
+    border: none;
+    background-color: none;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    margin-top: 30%;
+    right: -150%;
+    bottom: 1;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+.sales-body {
+    color: rgb(255, 255, 255);
+}
+
+/*Text*/
+.text-title {
+    font-size: 1em;
+    font-weight: lighter;
+}
+
+/*Hover*/
+.sales:hover {
+    border-color: #9f9696;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.sales:hover .sales-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+}
+
+/* using */
+
+.using {
+    width: 200px;
+    height: 50px;
+    left: 5%;
+    margin-top: -75%;
+    border-radius: 20px;
+    background: lightblue;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #000000;
+    transition: 0.5s ease-out;
+    overflow: visible;
+}
+
+.using-details {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+}
+
+.using-button {
+    transform: translate(-50%, 125%);
+    width: 300%;
+    text-align: justify;
+    border-radius: 1rem;
+    border: none;
+    background-color: none;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 300%;
+    margin-top: -45%;
+    bottom: 1;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+.using-body {
+    color: rgb(255, 255, 255);
+}
+
+/*Text*/
+.text-title {
+    font-size: 1em;
+    font-weight: lighter;
+}
+
+/*Hover*/
+.using:hover {
+    border-color: #9f9696;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.using:hover .using-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+}

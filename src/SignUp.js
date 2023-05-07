@@ -33,18 +33,26 @@ const SignupPage = () => {
   return (
     <div>
       <div>
-        <h2>Tax Calculation system</h2>
+        <h2 style={{ marginLeft: "17%" }}>Tax Calculation system</h2>
         <div
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            height: "80vh",
+
+            height: "70vh",
           }}
         >
+          <div style={{ padding: "10px" }}>
+            <img
+              src={require("./images/logo.jpg.png")} 
+              style={{ width: "150px", height: "100px", marginLeft: "-400%" }}
+            />
+          </div>
+
           <h3> Sign Up</h3>
-          <h4> Hello there! Signin and start calculating your taxes</h4>
+          <h4> Hello there! Signin and start calculating your taxes.</h4>
           <div
             style={{
               border: "5px solid black",
