@@ -156,8 +156,8 @@
     font-size: 1rem;
     padding: .5rem 1rem;
     position: absolute;
-    left: 70%;
-    margin-top: 30%;
+    left: 55%;
+    margin-top: 5%;
     bottom: 1;
     opacity: 0;
     transition: 0.3s ease-out;
@@ -219,8 +219,8 @@
     font-size: 1rem;
     padding: .5rem 1rem;
     position: absolute;
-    margin-top: 30%;
-    right: -150%;
+    margin-top: 10%;
+    right: -130%;
     bottom: 1;
     opacity: 0;
     transition: 0.3s ease-out;
@@ -282,8 +282,8 @@
     font-size: 1rem;
     padding: .5rem 1rem;
     position: absolute;
-    left: 300%;
-    margin-top: -45%;
+    left: 290%;
+    margin-top: -75%;
     bottom: 1;
     opacity: 0;
     transition: 0.3s ease-out;

@@ -73,7 +73,15 @@ const InstructionPage = () => {
             services at each stage of production or distribution. VAT is
             typically charged as a percentage of the price of the goods or
             services. In some countries, VAT is known as a goods and services
-            tax (GST).
+            tax (GST).Value Added Tax (VAT) is an indirect tax levied on the
+            value creation or addition. It is a tax on the consumption of goods
+            and services and is collected at every stage of production and
+            distribution. This means that if you purchase a good or service, you
+            may be paying VAT as part of the price. The concept of VAT in Nepal
+            was introduced on 16 Nov. 1997 but the act was developed in 1998.
+            VAT was implemented in FA 1998/99 and is the major source of
+            government revenue. It is administered by the Inland Revenue
+            Department of Nepal.
           </button>
         </div>
 
@@ -86,7 +94,13 @@ const InstructionPage = () => {
             sell goods or services, you may be required to collect sales tax and
             send it to the government. To collect sales tax, you will need to
             register with your state's tax authority and obtain a sales tax
-            permit.
+            permit.Sales tax is a tax on the sale of goods and services. It is
+            typically collected by the seller at the point of sale and then
+            remitted to the government. In Nepal, sales tax has been replaced by
+            Value Added Tax (VAT) . VAT is an indirect tax levied on the value
+            creation or addition. It is a tax on the consumption of goods and
+            services and is collected at every stage of production and
+            distribution.
           </button>
         </div>
       </div>
@@ -96,11 +110,21 @@ const InstructionPage = () => {
           <p class="text-body">How to Use Our System ?</p>
         </div>
         <button class="using-button">
-          To use our system, choose from one of the four tax types: Income Tax,
-          Sales Tax, VAT Tax, or Vehicle Tax. You can also view your calculation
-          history by clicking on the `View History` button. Please note that you
-          must be logged in to access the `View History` page. On this page, you
-          can edit your previous calculations or delete any unwanted
+          The tax calculation system made by BAAS for Nepal is a powerful tool
+          designed to make tax calculation simple and accessible. With its
+          user-friendly interface and easy-to-understand instructions, this
+          system is perfect for anyone looking to gain a better understanding of
+          the tax system in Nepal. The main goal of this system is to promote
+          knowledge on tax and to make it more accessible to the general public.
+          This is achieved through its clear instructions and intuitive
+          features, which guide users through the process of calculating their
+          taxes. By using this system, individuals can gain a better
+          understanding of the tax system in Nepal and easily calculate their
+          taxes. Whether you’re calculating sales tax, income tax, vehicle tax
+          or VAT, this system has you covered. With its ability to view, edit
+          and delete previous calculations, users can easily keep track of their
+          tax history. Overall, the tax calculation system made by BAAS for
+          Nepal is a valuable tool for anyone looking to simplify their tax
           calculations.
         </button>
       </div>
