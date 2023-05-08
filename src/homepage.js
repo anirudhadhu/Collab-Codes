@@ -61,36 +61,36 @@ function Homepage() {
           {/* The upper buttons */}
           <div className="buttons_upper">
             {/* Incometax button */}
-            <button className="card1" onClick={handleIncometaxClick}>
-              <div class="card-details1">
-                <p class="text-body1">Income Tax</p>
+            <div className="card1" onClick={handleIncometaxClick}>
+              <div className="card-details1">
+                <p className="text-body1">Income Tax</p>
               </div>
-              <button class="card-button1">Calculate</button>
-            </button>
+              <button className="card-button1">Calculate</button>
+            </div>
             {/* Large 1 button */}
-            <button className="card2" onClick={handlevehicletaxClick}>
-              <div class="card-details2">
-                <p class="text-body2">Vehicle Tax</p>
+            <div className="card2" onClick={handlevehicletaxClick}>
+              <div className="card-details2">
+                <p className="text-body2">Vehicle Tax</p>
               </div>
-              <button class="card-button2">Calculate</button>
-            </button>
+              <button className="card-button2">Calculate</button>
+            </div>
           </div>
           {/* The lower buttons */}
           <div className="lower_buttons">
             {/* Small button */}
-            <button className="card3" onClick={handlevattaxClick}>
-              <div class="card-details3">
-                <p class="text-body3">VAT Tax</p>
+            <div className="card3" onClick={handlevattaxClick}>
+              <div className="card-details3">
+                <p className="text-body3">VAT Tax</p>
               </div>
-              <button class="card-button3">Calculate</button>
-            </button>
+              <button className="card-button3">Calculate</button>
+            </div>
             {/* Small 1 button */}
-            <button className="card4" onClick={handlesalestaxClick}>
-              <div class="card-details4">
-                <p class="text-body4">Sales Tax</p>
+            <div className="card4" onClick={handlesalestaxClick}>
+              <div className="card-details4">
+                <p className="text-body4">Sales Tax</p>
               </div>
-              <button class="card-button4">Calculate</button>
-            </button>
+              <button className="card-button4">Calculate</button>
+            </div>
             {/* The View history button */}
             <div className="viewhistory">
               <button onClick={handleViewHistoryClick}>View history</button>

@@ -94,7 +94,7 @@ const VatTaxCalculator = () => {
       </div>
       <div>
         <div style={{ marginTop: "30px" }}>
-          <button onClick={handleHomeClick} >Back</button>{" "}
+          <button onClick={handleHomeClick} >Back</button>
         </div>
       </div>
     </div>

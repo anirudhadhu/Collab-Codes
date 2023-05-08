@@ -9,9 +9,7 @@ function AboutUs() {
 
   return (
     <div>
-      <div style={{ marginTop: "0px", marginLeft: "1300px" }}>
-        <button onClick={handleHomeClick}>Back</button>{" "}
-      </div>
+     
       <h1
         style={{
           fontSize: "2rem",
@@ -23,7 +21,7 @@ function AboutUs() {
       >
         About Bass
       </h1>
-
+        
       <p>
         BASS is a team of dedicated students from Herald College in Kathmandu.
         Our mission is to develop innovative and user-friendly software
@@ -43,28 +41,29 @@ function AboutUs() {
 
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div style={{ padding: "10px" }}>
-          <img
+        <img
             src={require("./images/bibhusan.png")}
             style={{ width: "250px", height: "200px" }}
           />
           <p>Project Manager</p>
+          
         </div>
         <div style={{ padding: "10px" }}>
-          <img
+        <img
             src={require("./images/sujan.png")}
             style={{ width: "250px", height: "200px" }}
           />
           <p>Business Analyst</p>
         </div>
         <div style={{ padding: "10px" }}>
-          <img
+        <img
             src={require("./images/me.JPG")}
             style={{ width: "250px", height: "200px" }}
           />
           <p>Developer</p>
         </div>
         <div style={{ padding: "10px" }}>
-          <img
+        <img
             src={require("./images/pratap.png")}
             style={{ width: "250px", height: "200px" }}
           />
@@ -72,13 +71,14 @@ function AboutUs() {
         </div>
 
         <div style={{ padding: "10px" }}>
-          <img
+        <img
             src={require("./images/aryan.png")}
             style={{ width: "250px", height: "200px" }}
           />
           <p>Developer</p>
         </div>
       </div>
+
 
       <h2
         style={{
@@ -92,8 +92,9 @@ function AboutUs() {
         Our Respected Supervisors
       </h2>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <div style={{ padding: "10px" }}>
-          <img
+
+      <div style={{ padding: "10px" }}>
+        <img
             src={require("./images/anmolsir.png")}
             style={{ width: "250px", height: "200px" }}
           />
@@ -101,7 +102,7 @@ function AboutUs() {
         </div>
 
         <div style={{ padding: "10px" }}>
-          <img
+        <img
             src={require("./images/aadarshsir.png")}
             style={{ width: "250px", height: "200px" }}
           />
@@ -109,12 +110,17 @@ function AboutUs() {
         </div>
 
         <div style={{ padding: "10px" }}>
-          <img
+        <img
             src={require("./images/birajsir.png")}
             style={{ width: "250px", height: "200px" }}
           />
           <p>Mr Biraj Dulal Sir</p>
         </div>
+
+      </div>
+       
+      <div style={{ marginTop: "0px", marginLeft: "650px" }}>
+        <button onClick={handleHomeClick}>Back</button>{" "}
       </div>
     </div>
   );

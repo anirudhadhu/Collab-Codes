@@ -1,13 +1,13 @@
 import "./App.css";
 import LoginForm from "./Login";
-import Homepage from "./homepage";
+
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <>
-      <LoginForm>
-        <Homepage></Homepage>
-      </LoginForm>
+      <ToastContainer />
+      <LoginForm />
     </>
   );
 }

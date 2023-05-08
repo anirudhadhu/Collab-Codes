@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import Homepage from "./homepage";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Incometax = () => {
   const [employeeType, setEmployeeType] = useState("unmarried");
   const [fiscalYear, setFiscalYear] = useState("2079/2080");
   const [monthlySalary, setMonthlySalary] = useState(0);
   const [numMonths, setNumMonths] = useState(12);
+  const [isLoading, setLoading] = useState(false);
   const [annualDeduction, setAnnualDeduction] = useState({
     employeeType: "married", // or 'unmarried'
     socialSecurityFund: 0,
@@ -124,12 +127,42 @@ const Incometax = () => {
       }
     }
     setTax(taxAmount);
+    setLoading(true);
+    fetch("https://taxcalc.onrender.com/api/finance/addIncome", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
+      },
+      body: JSON.stringify({ amount: taxAmount }),
+    })
+      .then((response) => {
+        setLoading(false);
+        if (response.ok) {
+          response.json().then((data) => {
+            toast.success("Income Tax calculated successfully", {
+              position: toast.POSITION.TOP_RIGHT,
+            });
+            console.log(data);
+          });
+        } else {
+          response.json().then((data) => {
+            toast.error(data.message, {
+              position: toast.POSITION.TOP_RIGHT,
+            });
+            console.log(data.message);
+          });
+        }
+      })
+      .catch((error) => console.error(error));
   };
 
-  return (
-    
+  return isLoading ? (
+    <div style={{ marginTop: "25%", marginLeft: "50%" }}>
+      <label htmlFor="tax">Loading...</label>
+    </div>
+  ) : (
     <div
-    
       style={{
         display: "flex",
         flexDirection: "column",
@@ -154,7 +187,6 @@ const Incometax = () => {
           top: "120px",
         }}
       >
-
         <label htmlFor="employee-type" style={{ width: "150px" }}>
           Nature of Employee:
         </label>
@@ -234,11 +266,11 @@ const Incometax = () => {
             Annual Income
           </h1>
 
-          <label htmlFor="monthly-salary" style={{ width: "150px" }}>
+          <form htmlFor="monthly-salary" style={{ width: "150px" }}>
             Monthly Salary:
-          </label>
+          </form>
           <input
-            type="number"
+            type="text"
             id="monthly-salary"
             value={monthlySalary}
             onChange={handleMonthlySalaryChange}
@@ -260,7 +292,7 @@ const Incometax = () => {
             Number of Months Worked:
           </label>
           <input
-            type="number"
+            type="text"
             id="num-months"
             value={numMonths}
             onChange={handleNumMonthsChange}
@@ -310,7 +342,7 @@ const Incometax = () => {
               Social Security Fund:
             </label>
             <input
-              type="number"
+              type="text"
               id="social-security-fund"
               value={annualDeduction.socialSecurityFund}
               onChange={handleSocialSecurityFundChange}
@@ -334,7 +366,7 @@ const Incometax = () => {
               Employee's Provident Fund:
             </label>
             <input
-              type="number"
+              type="text"
               id="employees-provident-fund"
               value={annualDeduction.employeesProvidentFund}
               onChange={handleEmployeesProvidentFundChange}
@@ -353,10 +385,22 @@ const Incometax = () => {
             />
             <label htmlFor="insurance">Insurance:</label>
             <input
-              type="number"
+              type="text"
               id="insurance"
               value={annualDeduction.insurance}
               onChange={handleInsuranceChange}
+              style={{
+                width: "200px",
+                marginBottom: "10px",
+                border: "1px solid black",
+                padding: 7,
+                borderRadius: 10,
+                backgroundColor: "white",
+                fontSize: "small",
+                fontWeight: "bold",
+                textAlign: "center",
+                color: "black",
+              }}
             />
             <button
               onClick={calculateTax}
@@ -375,12 +419,11 @@ const Incometax = () => {
                 cursor: "-moz-grab",
               }}
             >
-              
               Calculate Tax
             </button>{" "}
             <div>
               <p>Tax Amount: {tax}</p>
-              <div style={{ marginTop: "18px", marginInline:"55px", }}>
+              <div style={{ marginTop: "18px", marginInline: "55px" }}>
                 <button onClick={handleHomeClick}>Back</button>{" "}
               </div>
             </div>

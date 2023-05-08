@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import LoginForm from "./Login";
 
 const SignupPage = () => {
   const [Username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setLoading] = useState(false);
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -22,37 +24,85 @@ const SignupPage = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(
-      `Submitting signup form with Username: ${Username}, email: ${email}, password: ${password}`
-    );
+    setLoading(true);
+    fetch("https://taxcalc.onrender.com/api/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: Username,
+        email: email,
+        password: password,
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log("Sign up successful");
+          // redirect the user to the home page
+          ReactDOM.render(<LoginForm />, document.body);
+        } else {
+          setLoading(false);
+          response.json().then((data) => {
+            toast.error(data.message, {
+              position: toast.POSITION.TOP_LEFT,
+            });
+            console.log(data.message);
+          });
+        }
+      })
+      .catch((error) => console.error(error));
   };
 
   const handleLoginClick = () => {
     ReactDOM.render(<LoginForm />, document.body);
   };
-  return (
+  return isLoading ? (
+    // Loading screen
+    <div>
+      <h2>Tax Calculation system</h2>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "80vh",
+        }}
+      >
+        <h3> Sign Up</h3>
+        <h4> Hello there! Signin and start calculating your taxes</h4>
+        <div
+          style={{
+            border: "5px solid black",
+            borderRadius: 10,
+            padding: "30px 50px",
+            marginBottom: "20px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <p>Loading...</p>
+        </div>
+      </div>
+    </div>
+  ) : (
     <div>
       <div>
-        <h2 style={{ marginLeft: "17%" }}>Tax Calculation system</h2>
+        <h2>Tax Calculation system</h2>
         <div
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-
-            height: "70vh",
+            height: "80vh",
           }}
         >
-          <div style={{ padding: "10px" }}>
-            <img
-              src={require("./images/logo.jpg.png")} 
-              style={{ width: "150px", height: "100px", marginLeft: "-400%" }}
-            />
-          </div>
-
           <h3> Sign Up</h3>
-          <h4> Hello there! Signin and start calculating your taxes.</h4>
+          <h4> Hello there! Signin and start calculating your taxes</h4>
           <div
             style={{
               border: "5px solid black",
@@ -154,9 +204,9 @@ const SignupPage = () => {
                 Signup
               </button>
               <br></br>
-              <div class="Login ">
+              <div className="Login ">
                 Already Have an account?
-                <button2
+                <button
                   className="submit"
                   type="submit"
                   onClick={handleLoginClick}
@@ -175,7 +225,7 @@ const SignupPage = () => {
                   }}
                 >
                   Login
-                </button2>
+                </button>
               </div>
             </form>
           </div>
