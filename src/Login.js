@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import SignupPage from "./SignUp";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import AdminPanel from "./admin";
 
 const LoginForm = () => {
   const [email, setemailname] = useState("");
@@ -33,9 +34,12 @@ const LoginForm = () => {
           // store the access token to local storage
           response.json().then((data) => {
             localStorage.setItem("accessToken", data.access_token);
+            if (data.role === "admin") {
+              ReactDOM.render(<AdminPanel />, document.body);
+            } else {
+              ReactDOM.render(<Homepage />, document.body);
+            }
           });
-          // redirect the user to the home page
-          ReactDOM.render(<Homepage />, document.body);
         } else {
           setLoading(false);
 

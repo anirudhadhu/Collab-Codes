@@ -24,7 +24,7 @@ const VatTaxCalculator = () => {
   };
 
   const saveToDatabase = () => {
-    const vatTax = price * vatRate;
+    const vatTax = (price * vatRate)/100;
     setLoading(true);
     fetch("https://taxcalc.onrender.com/api/finance/addValueAddedTax", {
       method: "POST",

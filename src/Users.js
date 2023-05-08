@@ -1,53 +1,56 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import AdminPanel from './admin';
+import React, { Component } from "react";
+import axios from "axios";
+import AdminPanel from "./admin";
 import ReactDOM from "react-dom";
 
 const handleAdminClick = () => {
-    ReactDOM.render(<AdminPanel />, document.body);
-  };
+  ReactDOM.render(<AdminPanel />, document.body);
+};
 
 class Users extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: []
+      users: [],
     };
   }
 
   componentDidMount() {
-    axios.get('/api/users')
-      .then(response => {
-        const users = response.data;
+    fetch("https://taxcalc.onrender.com/api/admin/users", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
         this.setState({
-          users: users
+          users: data.users.filter((user) => user.role === "user"),
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }
-
   handleDeleteUser = (id) => {
-    axios.delete(`/api/users/${id}`)
-      .then(response => {
-        // refresh the user list
-        axios.get('/api/users')
-          .then(response => {
-            const users = response.data;
-            this.setState({
-              users: users
-            });
-          })
-          .catch(error => {
-            console.log(error);
-          });
+    fetch(`https://taxcalc.onrender.com/api/user/deleteUser/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
+      },
+    })
+      .then((data) => {
+        console.log(data);
+        this.setState({
+          users: this.state.users.filter((user) => user._id !== id),
+        });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
-  }
-
+  };
   render() {
     return (
       <div className="container">
@@ -61,7 +64,7 @@ class Users extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.users.map(user => (
+            {this.state.users.map((user) => (
               <tr key={user._id}>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
@@ -75,9 +78,8 @@ class Users extends Component {
           </tbody>
         </table>
         <div style={{ marginTop: "10px" }}>
-        <button onClick={handleAdminClick}>Back</button>
-      </div>
-
+          <button onClick={handleAdminClick}>Back</button>
+        </div>
       </div>
     );
   }

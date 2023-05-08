@@ -1,46 +1,49 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import Users from './Users';
-import ReactDOM from 'react-dom';
-import LoginForm from './Login';
-
+import React, { Component } from "react";
+import Users from "./Users";
+import ReactDOM from "react-dom";
+import LoginForm from "./Login";
 
 const handleUserClick = () => {
-    ReactDOM.render(<Users />, document.body);
-  };
+  ReactDOM.render(<Users />, document.body);
+};
 
-  const handleLoginClick = () => {
-    ReactDOM.render(<LoginForm />, document.body);
-  };
+const handleLoginClick = () => {
+  ReactDOM.render(<LoginForm />, document.body);
+};
 
 class AdminPanel extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       incomeTax: 0,
       salesTax: 0,
       vat: 0,
-      vehicleTax: 0
+      vehicleTax: 0,
     };
   }
 
-  componentDidMount(){
-      axios.get('/api/taxinfo')
-        .then(response => {
-            const data = response.data;
-            this.setState({
-                incomeTax: data.incomeTax,
-                salesTax: data.salesTax,
-                vat: data.vat,
-                vehicleTax: data.vehicleTax
-            });
-        })
-        .catch(error => {
-            console.log(error);
+  componentDidMount() {
+    fetch("https://taxcalc.onrender.com/api/admin/totals", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        this.setState({
+          incomeTax: data.totalIncomeNumber,
+          salesTax: data.totalSalesNumber,
+          vat: data.totalValueAddedTaxNumber,
+          vehicleTax: data.totalVehicleTaxNumber,
         });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
-
   render() {
     return (
       <div className="container">
@@ -74,10 +77,9 @@ class AdminPanel extends Component {
         <button onClick={handleUserClick}>Number of users</button>
 
         <div style={{ marginTop: "10px" }}>
-        <button onClick={handleLoginClick}>Sign Out</button>
+          <button onClick={handleLoginClick}>Sign Out</button>
+        </div>
       </div>
-      </div>
-      
     );
   }
 }
