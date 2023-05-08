@@ -10,9 +10,7 @@ const InstructionPage = () => {
 
   return (
     <div>
-      <div style={{ marginTop: "0px", marginLeft: "1300px" }}>
-        <button onClick={handleHomeClick}>Back</button>{" "}
-      </div>
+     
 
       <h1
         style={{
@@ -127,6 +125,9 @@ const InstructionPage = () => {
           Nepal is a valuable tool for anyone looking to simplify their tax
           calculations.
         </button>
+      </div>
+      <div style={{ marginTop: "250px", marginLeft: "650px" }}>
+        <button onClick={handleHomeClick}>Back</button>{" "}
       </div>
     </div>
   );

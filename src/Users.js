@@ -55,7 +55,6 @@ class Users extends Component {
         <table>
           <thead>
             <tr>
-              <th>ID</th>
               <th>Name</th>
               <th>Email</th>
               <th>Action</th>
@@ -64,7 +63,6 @@ class Users extends Component {
           <tbody>
             {this.state.users.map(user => (
               <tr key={user._id}>
-                <td>{user._id}</td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>

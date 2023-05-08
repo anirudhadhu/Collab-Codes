@@ -91,12 +91,13 @@ function Homepage() {
               </div>
               <button className="card-button4">Calculate</button>
             </div>
-            {/* The View history button */}
-            <div className="viewhistory">
-              <button onClick={handleViewHistoryClick}>View history</button>
-            </div>
+
           </div>
         </div>
+      </div>
+       {/* The View history button */}
+       <div style={{ marginTop: "-20px", marginLeft: "750px"}}>
+        <button10 onClick={handleViewHistoryClick}>View history</button10>
       </div>
     </>
   );

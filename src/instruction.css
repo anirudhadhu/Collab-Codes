@@ -84,7 +84,7 @@
 }
 
 .Vehicle-button {
-    transform: translate(-50%, 125%);
+    transform: translate(-50%, 0%);
     width: 300%;
     text-align: justify;
     border-radius: 1rem;
@@ -146,7 +146,7 @@
 }
 
 .VAT-button {
-    transform: translate(-50%, 125%);
+    transform: translate(-50%, 0%);
     width: 300%;
     text-align: justify;
     border-radius: 1rem;
@@ -209,7 +209,7 @@
 }
 
 .sales-button {
-    transform: translate(-50%, 125%);
+    transform: translate(-50%, 0%);
     width: 300%;
     text-align: justify;
     border-radius: 1rem;
@@ -272,7 +272,7 @@
 }
 
 .using-button {
-    transform: translate(-50%, 125%);
+    transform: translate(-50%, 0%);
     width: 300%;
     text-align: justify;
     border-radius: 1rem;

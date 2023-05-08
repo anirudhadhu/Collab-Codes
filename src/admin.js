@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Users from './Users';
 import ReactDOM from 'react-dom';
+import LoginForm from './Login';
 
 
 const handleUserClick = () => {
     ReactDOM.render(<Users />, document.body);
+  };
+
+  const handleLoginClick = () => {
+    ReactDOM.render(<LoginForm />, document.body);
   };
 
 class AdminPanel extends Component {
@@ -67,7 +72,12 @@ class AdminPanel extends Component {
           </tbody>
         </table>
         <button onClick={handleUserClick}>Number of users</button>
+
+        <div style={{ marginTop: "10px" }}>
+        <button onClick={handleLoginClick}>Sign Out</button>
       </div>
+      </div>
+      
     );
   }
 }

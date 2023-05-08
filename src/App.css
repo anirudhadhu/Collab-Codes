@@ -37,8 +37,8 @@
 
 .buttons_upper {
   position: absolute;
-  top: 50%;
-  right: -7.5%;
+  top: 70%;
+  right: 30%;
   transform: translate(-90%, -80%);
   ;
 }
@@ -51,7 +51,7 @@
 }
 
 .card1 {
-  width: 500px;
+  width: 230px;
   height: 100px;
   border-radius: 20px;
   background: hsl(0, 12%, 36%);
@@ -91,6 +91,7 @@
 
 }
 
+
 .text-body1 {
   color: rgb(255, 255, 255);
 }
@@ -107,8 +108,8 @@
 
 .lower_buttons {
   position: absolute;
-  top: 60%;
-  right: -7.5%;
+  top: 32%;
+  right: -5%;
   transform: translate(-90%, -1%);
 }
 
@@ -119,7 +120,7 @@
 }
 
 .card2 {
-  width: 500px;
+  width: 230px;
   height: 100px;
   border-radius: 20px;
   background: hsl(0, 12%, 36%);
@@ -129,6 +130,7 @@
   transition: 0.5s ease-out;
   overflow: visible;
   font-size: x-large;
+  top: 50px;
 }
 
 .card-details2 {
@@ -172,7 +174,7 @@
 }
 
 .card3 {
-  width: 500px;
+  width: 230px;
   height: 100px;
   border-radius: 20px;
   background: hsl(0, 12%, 36%);
@@ -225,7 +227,7 @@
 }
 
 .card4 {
-  width: 500px;
+  width: 230px;
   height: 100px;
   border-radius: 20px;
   background: hsl(0, 12%, 36%);
@@ -235,6 +237,7 @@
   transition: 0.5s ease-out;
   overflow: visible;
   font-size: x-large;
+  top: 50px;
 }
 
 .card-details4 {
@@ -299,14 +302,7 @@ button:active {
   -webkit-transition: all 0.25s;
 }
 
-.viewhistory button {
-  width: 180px;
-  height: 34px;
-  font-size: 14px;
-  padding: 6px 12px;
-  margin-left: 180px;
-  margin-top: 25px;
-}
+
 
 .App {
   display: flex;
