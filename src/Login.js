@@ -6,12 +6,12 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const LoginForm = () => {
-  const [username, setUsername] = useState("");
+  const [email, setemailname] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setLoading] = useState(false);
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+  const handleEmailChange = (event) => {
+    setemailname(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
@@ -25,7 +25,7 @@ const LoginForm = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email: username, password: password }),
+      body: JSON.stringify({ email: email, password: password }),
     })
       .then((response) => {
         if (response.ok) {
@@ -123,9 +123,9 @@ const LoginForm = () => {
                   color: "black",
                 }}
                 className="input"
-                placeholder="Enter your username"
-                value={username}
-                onChange={handleUsernameChange}
+                placeholder="Enter your Email"
+                value={email}
+                onChange={handleEmailChange}
               />
             </div>
             <div style={{ marginBottom: "20px" }}>

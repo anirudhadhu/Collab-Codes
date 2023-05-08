@@ -5,6 +5,7 @@ import Homepage from "./homepage";
 const VatTaxCalculator = () => {
   const [price, setPrice] = useState(0);
   const [vatRate, setVatRate] = useState(13);
+  const [isLoading, setLoading] = useState(false);
 
   const handlePriceChange = (event) => {
     setPrice(event.target.value);
@@ -18,11 +19,41 @@ const VatTaxCalculator = () => {
   };
 
   const calculateVatTax = () => {
-    const vatTax = price * vatRate;
+    const vatTax = (price * vatRate)/100;
     return vatTax.toFixed(2);
   };
 
-  return (
+  const saveToDatabase = () => {
+    const vatTax = price * vatRate;
+    setLoading(true);
+    fetch("https://taxcalc.onrender.com/api/finance/addValueAddedTax", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
+      },
+      body: JSON.stringify({ amount: vatTax.toFixed(2) }),
+    })
+      .then((response) => {
+        setLoading(false);
+        if (response.ok) {
+          response.json().then((data) => {
+            console.log(data);
+          });
+        } else {
+          response.json().then((data) => {
+            console.log(data.message);
+          });
+        }
+      })
+      .catch((error) => console.error(error));
+  }
+
+  return isLoading ? (
+    <div style={{ marginTop: "25%", marginLeft: "50%" }}>
+      <label htmlFor="tax">Loading...</label>
+    </div>
+  ) :(
     <div
       style={{
         display: "flex",
@@ -54,7 +85,7 @@ const VatTaxCalculator = () => {
         <label style={{ marginRight: "10px", fontWeight: "bold" }}>
           Price (excluding VAT):
           <input
-            type="number"
+            type="text"
             value={price}
             onChange={handlePriceChange}
             style={{ padding: "5px", borderRadius: "5px" }}
@@ -74,8 +105,7 @@ const VatTaxCalculator = () => {
           />
         </label>
       </div>
-      <div>
-        <button onClick={calculateVatTax} style={{
+      <button onClick={saveToDatabase} style={{
           padding: "15px",
           background: "#3d405b",
           color: "white",
@@ -83,6 +113,8 @@ const VatTaxCalculator = () => {
           borderRadius: "5px",
           cursor: "pointer",
         }}>Calculate Vat Tax</button>
+      <div>
+       
         <div
         style={{
           marginTop: "20px",

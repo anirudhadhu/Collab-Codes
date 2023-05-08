@@ -4,6 +4,7 @@ import LoginForm from "./Login";
 import AboutUs from "./AboutUs";
 import Homepage from "./homepage";
 import InstructionPage from "./Instructions";
+import Dashboard from "./admin";
 
 const Navbar = () => {
   const handleLoginClick = () => {
@@ -22,6 +23,10 @@ const Navbar = () => {
     ReactDOM.render(<InstructionPage />, document.body);
   };
 
+  const handleAdminClick = () => {
+    ReactDOM.render(<Dashboard />, document.body);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar__left">
@@ -37,17 +42,18 @@ const Navbar = () => {
           <li><a href="/about">About Us</a></li>
           <li><a href="/instructions">Instructions</a></li> */}
           <li>
-            <button onClick={handleHomeClick}>Home</button>
+            <li onClick={handleHomeClick}>Home</li>
           </li>
           <li>
-            <button onClick={handleAboutUsClick}>About Us</button>
+            <li onClick={handleAboutUsClick}>About Us</li>
           </li>
-          <li>
-            <button onClick={handleInsClick}>Instructions</button>
-          </li>
+          
+            <li onClick={handleInsClick}>Instructions</li>
+        
           <li>
             <button onClick={handleLoginClick}>Sign Out</button>
           </li>
+          <button onClick={handleAdminClick}>Admin</button>
         </ul>
       </div>
     </nav>

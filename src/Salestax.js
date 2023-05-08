@@ -6,17 +6,44 @@ const Salestax = () => {
   const [price, setPrice] = useState();
   const [taxRate, setTaxRate] = useState();
   const [tax, setTax] = useState();
+  const [isLoading, setLoading] = useState(false);
 
   const calculateTax = () => {
     const calculatedTax = (price * taxRate) / 100;
     setTax(calculatedTax);
+    setLoading(true);
+    fetch("https://taxcalc.onrender.com/api/finance/addSales", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
+      },
+      body: JSON.stringify({ amount: calculatedTax }),
+    })
+      .then((response) => {
+        setLoading(false);
+        if (response.ok) {
+          response.json().then((data) => {
+            console.log(data);
+          });
+        } else {
+          response.json().then((data) => {
+            console.log(data.message);
+          });
+        }
+      })
+      .catch((error) => console.error(error));
   };
 
   const handleHomeClick = () => {
     ReactDOM.render(<Homepage />, document.body);
   };
 
-  return (
+  return isLoading ? (
+    <div style={{ marginTop: "25%", marginLeft: "50%" }}>
+      <label htmlFor="tax">Loading...</label>
+    </div>
+  ) :( 
     <div 
       style={{
         display: "flex",
@@ -86,7 +113,7 @@ const Salestax = () => {
       <p>Tax: {tax}</p>
 
       <div style={{ marginTop: "10px" }}>
-        <button onClick={handleHomeClick}>Back</button>{" "}
+        <button onClick={handleHomeClick}>Back</button>
       </div>
     </div>
   );

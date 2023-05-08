@@ -5,7 +5,7 @@ import Homepage from "./homepage";
 const Vehicletax = () => {
   const [vehicleType, setVehicleType] = useState("bike");
   const [ccType, setCcType] = useState("100");
-
+  const [isLoading, setLoading] = useState(false);
   const [vehicleTax, setVehicleTax] = useState(0);
 
   const handleVehicleTypeChange = (event) => {
@@ -55,9 +55,37 @@ const Vehicletax = () => {
 
     // ...
     setVehicleTax(tax);
+    setLoading(true);
+    fetch("https://taxcalc.onrender.com/api/finance/addVehicleTax", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("accessToken"),
+      },
+      body: JSON.stringify({ amount: tax }),
+    })
+      .then((response) => {
+        setLoading(false);
+        if (response.ok) {
+          response.json().then((data) => {
+          
+            console.log(data);
+          });
+        } else {
+          response.json().then((data) => {
+            
+            console.log(data.message);
+          });
+        }
+      })
+      .catch((error) => console.error(error));
   };
 
-  return (
+  return isLoading ? (
+    <div style={{ marginTop: "25%", marginLeft: "50%" }}>
+      <label htmlFor="tax">Loading...</label>
+    </div>
+  ) :(
     <div
       style={{
         display: "flex",
