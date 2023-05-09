@@ -53,7 +53,11 @@ function Homepage() {
               calculation and help businesses comply with tax laws and
               regulations.
             </p>
+            <p className="rights">
+            © All Rights Reserved 2023
+          </p>
           </footer>
+          
         </div>
 
         {/* The buttons section */}

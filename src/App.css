@@ -394,6 +394,29 @@ button:active {
   color: #FFFFFF;
 }
 
+.rights{
+  position: absolute;
+  width: 565px;
+  height: 131px;
+  left: 292px;
+  top: 60%;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 33px;
+  /* or 272% */
+
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  letter-spacing: 0.742574px;
+
+  color: #FFFFFF;
+  
+}
+
 table {
   border-collapse: collapse;
   width: 100%;

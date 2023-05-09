@@ -60,47 +60,52 @@ const SignupPage = () => {
   return isLoading ? (
     // Loading screen
     <div>
-      <h2>Tax Calculation system</h2>
+      <h2 style={{ marginRight: "50%" }}>Tax Calculation system</h2>
       <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          height: "80vh",
-        }}
-      >
-        <h3> Sign Up</h3>
-        <h4> Hello there! Signin and start calculating your taxes</h4>
-        <div
           style={{
-            border: "5px solid black",
-            borderRadius: 10,
-            padding: "30px 50px",
-            marginBottom: "20px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+
+            height: "70vh",
           }}
         >
+          <div style={{ padding: "10px" }}>
+            <img
+              src={require("./images/logo.jpg.png")} 
+              style={{ width: "150px", height: "100px", marginLeft: "-400%" }}
+            />
+          </div>
           <p>Loading...</p>
         </div>
-      </div>
-    </div>
+        </div>
+      
+   
   ) : (
+
+
+
+
     <div>
       <div>
-        <h2>Tax Calculation system</h2>
-        <div
+      <h2 style={{ marginRight: "50%" }}>Tax Calculation system</h2>
+      <div
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            height: "80vh",
+
+            height: "70vh",
           }}
         >
+          <div style={{ padding: "10px" }}>
+            <img
+              src={require("./images/logo.jpg.png")} 
+              style={{ width: "150px", height: "100px", marginLeft: "-400%" }}
+            />
+          </div>
           <h3> Sign Up</h3>
           <h4> Hello there! Signin and start calculating your taxes</h4>
           <div
@@ -206,7 +211,7 @@ const SignupPage = () => {
               <br></br>
               <div className="Login ">
                 Already Have an account?
-                <button
+                <button2
                   className="submit"
                   type="submit"
                   onClick={handleLoginClick}
@@ -225,7 +230,7 @@ const SignupPage = () => {
                   }}
                 >
                   Login
-                </button>
+                </button2>
               </div>
             </form>
           </div>

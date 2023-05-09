@@ -62,17 +62,19 @@ const LoginForm = () => {
 
   return isLoading ? (
     // Loading screen
+    
     <div>
-      <h2>Tax Calculation system</h2>
+       <h2 style={{ marginRight: "0%" }}>Tax Calculation system</h2>
       <div
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "80vh",
+          height: "50vh",
         }}
       >
+
         <h3>LogIn</h3>
         <div
           style={{
@@ -91,17 +93,25 @@ const LoginForm = () => {
       </div>
     </div>
   ) : (
+
+
     <div>
-      <h2>Tax Calculation system</h2>
+      <h2 style={{ marginRight: "50%" }}>Tax Calculation system</h2>
       <div
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "80vh",
+          height: "50vh",
         }}
       >
+        <div style={{ padding: "10px" }}>
+          <img
+            src={require("./images/logo.jpg.png")}
+            style={{ width: "150px", height: "100px", marginLeft: "-400%" }}
+          />
+        </div>
         <h3>LogIn</h3>
         <div
           style={{
@@ -176,7 +186,7 @@ const LoginForm = () => {
 
             <div className="signup ">
               Don't Have an account?
-              <button
+              <button2
                 className="submit"
                 type="submit"
                 onClick={handleSignUpClick}
@@ -196,7 +206,7 @@ const LoginForm = () => {
                 }}
               >
                 Sign Up
-              </button>
+              </button2>
             </div>
           </form>
         </div>
