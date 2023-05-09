@@ -25,7 +25,7 @@ function AboutUs() {
         About Bass
       </h1>
         
-      <p>
+      <p style={{ fontStyle:"justify"}}>
         BASS is a team of dedicated students from Herald College in Kathmandu.
         Our mission is to develop innovative and user-friendly software
         solutions. As part of our Collaborative Development module, we have

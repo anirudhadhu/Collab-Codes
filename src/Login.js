@@ -109,7 +109,7 @@ const LoginForm = () => {
         <div style={{ padding: "10px" }}>
           <img
             src={require("./images/logo.jpg.png")}
-            style={{ width: "150px", height: "100px", marginLeft: "-400%" }}
+            style={{ width: "150px", height: "100px", marginLeft: "-400%",marginTop:"40px" }}
           />
         </div>
         <h3>LogIn</h3>
