@@ -75,7 +75,7 @@ const Salestax = () => {
       <label style={{ marginRight: "10px", fontWeight: "bold" }}>
         Price:
         <input
-          type="number"
+          type="text"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
           style={{ padding: "5px", borderRadius: "5px" }}
@@ -87,7 +87,7 @@ const Salestax = () => {
       <label style={{ marginRight: "10px", fontWeight: "bold" }}>
         Tax Rate:
         <input
-          type="number"
+          type="text"
           value={taxRate}
           onChange={(e) => setTaxRate(e.target.value)}
           style={{ padding: "5px", borderRadius: "5px" }}

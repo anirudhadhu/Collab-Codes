@@ -100,8 +100,8 @@ function Homepage() {
         </div>
       </div>
        {/* The View history button */}
-       <div style={{ marginTop: "-20px", marginLeft: "750px"}}>
-        <button10 onClick={handleViewHistoryClick}>View history</button10>
+       <div style={{ marginTop: "-70px", marginLeft: "735px"}}>
+        <button onClick={handleViewHistoryClick}>View history</button>
       </div>
     </>
   );

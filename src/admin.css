@@ -14,6 +14,7 @@
   grid-template-rows: 1fr 1fr;
   gap: 8px;
   overflow: visible;
+  
  }
  
  .card .item {
@@ -198,3 +199,4 @@
   transform: translateZ(3rem);
   height: 1000px;
 }
+

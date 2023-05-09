@@ -4,7 +4,7 @@ import LoginForm from "./Login";
 import AboutUs from "./AboutUs";
 import Homepage from "./homepage";
 import InstructionPage from "./Instructions";
-import Dashboard from "./admin";
+// import Dashboard from "./admin";
 
 const Navbar = () => {
   const handleLoginClick = () => {
@@ -23,17 +23,17 @@ const Navbar = () => {
     ReactDOM.render(<InstructionPage />, document.body);
   };
 
-  const handleAdminClick = () => {
-    ReactDOM.render(<Dashboard />, document.body);
-  };
+  // const handleAdminClick = () => {
+  //   ReactDOM.render(<Dashboard />, document.body);
+  // };
 
   return (
     <nav className="navbar">
       <div className="navbar__left">
         <img
-          src={require("./images/1logo.png")}
+          src={require("./images/logo.jpg.png")}
           alt="Logo"
-          style={{ width: "100px", height: "50px" }}
+          style={{ width: "150px", height: "100px" }}
         />
       </div>
       <div className="navbar__right">

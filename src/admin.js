@@ -46,8 +46,16 @@ class AdminPanel extends Component {
   }
   render() {
     return (
+      
       <div className="container">
-        <h1>Admin Panel</h1>
+        <div style={{ marginBottom: "100px", marginLeft: "1300px" }}>
+        <button onClick={handleLoginClick}>Sign Out</button>{" "}
+      </div>
+      <h1
+      >
+        Admin Pannel
+      </h1>
+        
         <table>
           <thead>
             <tr>
@@ -74,11 +82,17 @@ class AdminPanel extends Component {
             </tr>
           </tbody>
         </table>
-        <button onClick={handleUserClick}>Number of users</button>
+        
 
-        <div style={{ marginTop: "10px" }}>
+        <div style={{ marginBottom: "200px", marginLeft: "500px" }}>
+        <button onClick={handleUserClick}>Number of users</button>
+      </div>
+      
+        {/* <button onClick={handleUserClick}>Number of users</button> */}
+
+        {/* <div style={{ marginTop: "10px" }}>
           <button onClick={handleLoginClick}>Sign Out</button>
-        </div>
+        </div> */}
       </div>
     );
   }

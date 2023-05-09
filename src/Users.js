@@ -77,7 +77,7 @@ class Users extends Component {
             ))}
           </tbody>
         </table>
-        <div style={{ marginTop: "10px" }}>
+        <div style={{ marginBottom: "100px", marginLeft: "500px" }}>
           <button onClick={handleAdminClick}>Back</button>
         </div>
       </div>

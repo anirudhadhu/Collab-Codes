@@ -9,6 +9,9 @@ function AboutUs() {
 
   return (
     <div>
+      <div style={{ marginTop: "0px", marginLeft: "1300px" }}>
+        <button onClick={handleHomeClick}>Back</button>{" "}
+      </div>
      
       <h1
         style={{
@@ -119,9 +122,6 @@ function AboutUs() {
 
       </div>
        
-      <div style={{ marginTop: "0px", marginLeft: "650px" }}>
-        <button onClick={handleHomeClick}>Back</button>{" "}
-      </div>
     </div>
   );
 }

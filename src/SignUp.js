@@ -71,12 +71,12 @@ const SignupPage = () => {
             height: "70vh",
           }}
         >
-          <div style={{ padding: "10px" }}>
+          {/* <div style={{ padding: "10px" }}>
             <img
               src={require("./images/logo.jpg.png")} 
               style={{ width: "150px", height: "100px", marginLeft: "-400%" }}
             />
-          </div>
+          </div> */}
           <p>Loading...</p>
         </div>
         </div>
