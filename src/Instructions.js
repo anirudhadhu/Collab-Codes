@@ -13,7 +13,6 @@ const InstructionPage = () => {
       <div style={{ marginTop: "0px", marginLeft: "1300px" }}>
         <button onClick={handleHomeClick}>Back</button>{" "}
       </div>
-     
 
       <h1
         style={{

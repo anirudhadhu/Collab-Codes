@@ -43,8 +43,8 @@ const Salestax = () => {
     <div style={{ marginTop: "25%", marginLeft: "50%" }}>
       <label htmlFor="tax">Loading...</label>
     </div>
-  ) :( 
-    <div 
+  ) : (
+    <div
       style={{
         display: "flex",
         flexDirection: "column",
@@ -71,30 +71,29 @@ const Salestax = () => {
         Sales Tax Calculator
       </h1>
 
-<div style={{ marginBottom: "20px" }}>
-      <label style={{ marginRight: "10px", fontWeight: "bold" }}>
-        Price:
-        <input
-          type="text"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-          style={{ padding: "5px", borderRadius: "5px" }}
-        />
-      </label>
+      <div style={{ marginBottom: "20px" }}>
+        <label style={{ marginRight: "10px", fontWeight: "bold" }}>
+          Price:
+          <input
+            type="text"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            style={{ padding: "5px", borderRadius: "5px" }}
+          />
+        </label>
       </div>
 
       <div style={{ marginBottom: "20px" }}>
-      <label style={{ marginRight: "10px", fontWeight: "bold" }}>
-        Tax Rate:
-        <input
-          type="text"
-          value={taxRate}
-          onChange={(e) => setTaxRate(e.target.value)}
-          style={{ padding: "5px", borderRadius: "5px" }}
-        />
-      </label>
+        <label style={{ marginRight: "10px", fontWeight: "bold" }}>
+          Tax Rate:
+          <input
+            type="text"
+            value={taxRate}
+            onChange={(e) => setTaxRate(e.target.value)}
+            style={{ padding: "5px", borderRadius: "5px" }}
+          />
+        </label>
       </div>
-
 
       <button
         onClick={calculateTax}

@@ -62,35 +62,29 @@ const SignupPage = () => {
     <div>
       <h2 style={{ marginRight: "50%" }}>Tax Calculation system</h2>
       <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
 
-            height: "70vh",
-          }}
-        >
-          {/* <div style={{ padding: "10px" }}>
+          height: "70vh",
+        }}
+      >
+        {/* <div style={{ padding: "10px" }}>
             <img
               src={require("./images/logo.jpg.png")} 
               style={{ width: "150px", height: "100px", marginLeft: "-400%" }}
             />
           </div> */}
-          <p>Loading...</p>
-        </div>
-        </div>
-      
-   
+        <p>Loading...</p>
+      </div>
+    </div>
   ) : (
-
-
-
-
     <div>
       <div>
-      <h2 style={{ marginRight: "50%" }}>Tax Calculation system</h2>
-      <div
+        <h2 style={{ marginRight: "50%" }}>Tax Calculation system</h2>
+        <div
           style={{
             display: "flex",
             flexDirection: "column",
@@ -102,7 +96,7 @@ const SignupPage = () => {
         >
           <div style={{ padding: "10px" }}>
             <img
-              src={require("./images/logo.jpg.png")} 
+              src={require("./images/logo.jpg.png")}
               style={{ width: "150px", height: "100px", marginLeft: "-400%" }}
             />
           </div>

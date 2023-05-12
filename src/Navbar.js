@@ -47,9 +47,9 @@ const Navbar = () => {
           <li>
             <li onClick={handleAboutUsClick}>About Us</li>
           </li>
-          
-            <li onClick={handleInsClick}>Instructions</li>
-        
+
+          <li onClick={handleInsClick}>Instructions</li>
+
           <li>
             <button onClick={handleLoginClick}>Sign Out</button>
           </li>

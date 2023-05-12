@@ -62,9 +62,9 @@ const LoginForm = () => {
 
   return isLoading ? (
     // Loading screen
-    
+
     <div>
-       <h2 style={{ marginRight: "0%" }}>Tax Calculation system</h2>
+      <h2 style={{ marginRight: "0%" }}>Tax Calculation system</h2>
       <div
         style={{
           display: "flex",
@@ -74,7 +74,6 @@ const LoginForm = () => {
           height: "50vh",
         }}
       >
-
         <h3>LogIn</h3>
         <div
           style={{
@@ -93,8 +92,6 @@ const LoginForm = () => {
       </div>
     </div>
   ) : (
-
-
     <div>
       <h2 style={{ marginRight: "50%" }}>Tax Calculation system</h2>
       <div
@@ -109,7 +106,12 @@ const LoginForm = () => {
         <div style={{ padding: "10px" }}>
           <img
             src={require("./images/logo.jpg.png")}
-            style={{ width: "150px", height: "100px", marginLeft: "-400%",marginTop:"40px" }}
+            style={{
+              width: "150px",
+              height: "100px",
+              marginLeft: "-400%",
+              marginTop: "40px",
+            }}
           />
         </div>
         <h3>LogIn</h3>

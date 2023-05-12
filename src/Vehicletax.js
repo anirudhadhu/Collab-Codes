@@ -68,12 +68,10 @@ const Vehicletax = () => {
         setLoading(false);
         if (response.ok) {
           response.json().then((data) => {
-          
             console.log(data);
           });
         } else {
           response.json().then((data) => {
-            
             console.log(data.message);
           });
         }
@@ -85,7 +83,7 @@ const Vehicletax = () => {
     <div style={{ marginTop: "25%", marginLeft: "50%" }}>
       <label htmlFor="tax">Loading...</label>
     </div>
-  ) :(
+  ) : (
     <div
       style={{
         display: "flex",
