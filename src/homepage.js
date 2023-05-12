@@ -53,11 +53,8 @@ function Homepage() {
               calculation and help businesses comply with tax laws and
               regulations.
             </p>
-            <p className="rights">
-            © All Rights Reserved 2023
-          </p>
+            <p className="rights">© All Rights Reserved 2023</p>
           </footer>
-          
         </div>
 
         {/* The buttons section */}
@@ -95,12 +92,11 @@ function Homepage() {
               </div>
               <button className="card-button4">Calculate</button>
             </div>
-
           </div>
         </div>
       </div>
-       {/* The View history button */}
-       <div style={{ marginTop: "-70px", marginLeft: "735px"}}>
+      {/* The View history button */}
+      <div style={{ marginTop: "-70px", marginLeft: "735px" }}>
         <button onClick={handleViewHistoryClick}>View history</button>
       </div>
     </>

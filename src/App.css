@@ -400,7 +400,7 @@ button:active {
   color: #FFFFFF;
 }
 
-.rights{
+.rights {
   position: absolute;
   width: 565px;
   height: 131px;
@@ -420,7 +420,7 @@ button:active {
   letter-spacing: 0.742574px;
 
   color: #FFFFFF;
-  
+
 }
 
 table {
@@ -464,14 +464,14 @@ button1:hover {
   background-color: #3e8e41;
 }
 
-h2{
+h2 {
   text-align: center;
 }
 
-.signup{
+.signup {
   margin-left: 23px;
 }
 
-.Login{
+.Login {
   margin-left: 20px;
 }
